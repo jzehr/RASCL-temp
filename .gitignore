@@ -9,3 +9,10 @@ data/results
 results/TEST
 
 data/TEST/*
+
+
+hyphy/
+tn93/
+raxml-ng/
+
+

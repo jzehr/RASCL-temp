@@ -48,6 +48,9 @@ print("Query FASTA file:", Input_Query_WholeGenomeSeqs)
 print("Background FASTA file:", Input_Background_WholeGenomeSeqs)
 print()
 
+# User variable pulled from the config file
+raxml_ng=config["raxml_ng"]
+
 #==============================================================================
 # End -- User defined settings
 #==============================================================================
@@ -266,7 +269,7 @@ rule raxml:
     output:
         combined_tree = os.path.join(OUTDIR, "{GENE}.combined.fas.raxml.bestTree")
     shell:
-        "raxml-ng --model GTR --msa {input.combined_fas} --threads {params.THREADS} --tree pars{{3}} --force"
+        "{raxml-ng} --model GTR --msa {input.combined_fas} --threads {params.THREADS} --tree pars{{3}} --force"
 #end rule 
 
 rule annotate:

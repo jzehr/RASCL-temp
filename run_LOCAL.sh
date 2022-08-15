@@ -23,7 +23,7 @@ echo "Executing HPC Snakemake command"
 snakemake \
       -s Snakefile \
       --cluster-config cluster.json \
-      --jobs 23 all \
+      --jobs 1 all \
       --rerun-incomplete \
       --keep-going \
       --reason \
